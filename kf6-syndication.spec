@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Syndication
 %define devname %mklibname KF6Syndication -d
-%define git 20230513
+%define git 20230526
 
 Name: kf6-syndication
 Version: 5.240.0
