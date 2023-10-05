@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Syndication
 %define devname %mklibname KF6Syndication -d
-%define git 20230927
+%define git 20231005
 
 Name: kf6-syndication
 Version: 5.240.0
@@ -71,7 +71,6 @@ An RSS/Atom parser library
 %files -n %{devname}
 %{_includedir}/KF6/Syndication
 %{_libdir}/cmake/KF6Syndication
-%{_qtdir}/mkspecs/modules/qt_Syndication.pri
 %{_qtdir}/doc/KF6Syndication.*
 
 %files -n %{libname}
