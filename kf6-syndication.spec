@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-syndication
-Version: 6.27.0
+Version: 6.28.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/syndication/-/archive/master/syndication-master.tar.bz2#/syndication-%{git}.tar.bz2
@@ -60,7 +60,7 @@ Development files (Headers etc.) for %{name}.
 An RSS/Atom parser library
 
 %prep
-%autosetup -p1 -n syndication-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n syndication-6.28.0
 %cmake \
 	-DBUILD_QCH:BOOL=ON \
 	-DBUILD_WITH_QT6:BOOL=ON \
