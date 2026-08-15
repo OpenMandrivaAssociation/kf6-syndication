@@ -6,7 +6,7 @@
 #define git 20240217
 
 Name: kf6-syndication
-Version: 6.28.0
+Version: 6.29.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/syndication/-/archive/master/syndication-master.tar.bz2#/syndication-%{git}.tar.bz2
@@ -37,6 +37,8 @@ BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: cmake(Qt6Xml)
 BuildRequires: cmake(KF6Codecs)
 Requires: %{libname} = %{EVRD}
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
 
 %description
 An RSS/Atom parser library
@@ -58,20 +60,6 @@ Requires: %{libname} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 An RSS/Atom parser library
-
-%prep
-%autosetup -p1 -n syndication-6.28.0
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
 
 %files
 %{_datadir}/qlogging-categories6/syndication.*
